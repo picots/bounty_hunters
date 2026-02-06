@@ -13,4 +13,6 @@ abstract class Entity {
   void hit(Entity other);
   bool dodge();
 
+  bool isDead() => health <= 0;
+
 }

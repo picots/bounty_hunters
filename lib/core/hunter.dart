@@ -7,15 +7,15 @@ class Hunter extends Entity {
 
   final int _chance;
   int nbTiles;
-  int _fortune = 0;
+  int fortune = 0;
 
   @override
   void hit(Entity other) => (weapon != null) ? other.health -= damage : other.health--;
 
   @override
-  bool dodge() => Random().nextInt(0) == _chance;
+  bool dodge() => Random().nextInt(10) < _chance;
 
-  void capture(Target target) => _fortune += target.bounty;
+  void capture(Target target) => fortune += target.bounty;
 
   Hunter(this._chance, super.maxHealth, {super.weapon, this.nbTiles = 1});
 }

@@ -5,7 +5,7 @@ import 'entity.dart';
 class Target  extends Entity{
 
   int bounty;
-  int _difficulty;
+  final int _difficulty;
 
   @override
   bool dodge() => Random().nextInt(_difficulty * 2) - _difficulty > 0;
